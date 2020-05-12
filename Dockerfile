@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 MAINTAINER Brayan Quiñones
 RUN yum install -y net-tools vim git epel-release python3-pip tree mod_wsgi mysql-devel python3-devel gcc httpd
 COPY requirements.txt /tmp/

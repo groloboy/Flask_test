@@ -1,4 +1,4 @@
 #!/usr/bin/python
 import sys
-sys.path.insert(0,"/var/www/project/")
+sys.path.insert(0,"/var/www/html/")
 from app import app as application
