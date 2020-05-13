@@ -5,7 +5,7 @@ COPY requirements.txt /tmp/
 RUN pip3 install -r /tmp/requirements.txt
 COPY . /tmp/
 RUN git clone https://github.com/groloboy/Flask_test.git html
-RUN yes | cp -r html/ /var/www/html/
+RUN yes | cp -r html/ /var/www/
 RUN chmod -R 777 /var/www/html
 RUN yes | cp -r html/httpd.conf /etc/httpd/conf/httpd.conf
 RUN service httpd restart
