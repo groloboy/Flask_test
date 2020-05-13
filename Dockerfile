@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos
 MAINTAINER Brayan Quiñones
 RUN yum install -y net-tools vim git epel-release python3-pip tree mod_wsgi mysql-devel python3-devel gcc httpd
 COPY requirements.txt /tmp/
@@ -8,5 +8,7 @@ RUN git clone https://github.com/groloboy/Flask_test.git html
 RUN yes | cp -r html/ /var/www/html/
 RUN chmod -R 777 /var/www/html
 RUN yes | cp -r html/httpd.conf /etc/httpd/conf/httpd.conf
+RUN service httpd restart
+RUN systemctl enable httpd
 EXPOSE 80
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
