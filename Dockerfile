@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos
 MAINTAINER Brayan Quiñones
 RUN yum install -y httpd
 RUN yum install -Y epel-release
